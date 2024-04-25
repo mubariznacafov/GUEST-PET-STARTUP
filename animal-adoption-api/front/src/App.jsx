@@ -8,7 +8,10 @@ import Veterinary from "./pages/Veterinary";
 import Navbar from "./pages/Navbar";
 import Footer from "./pages/Footer";
 import Favorites from "./pages/Favorites";
-import Adding from "./pages/sign-in/addingName";
+import AddingName from "./pages/sign-in/addingName";
+import AddingEmail from "./pages/sign-in/addEmail";
+import AddingPhoto from "./pages/sign-in/addPhoto";
+import AddingPassword from "./pages/sign-in/addPassword";
 import MaybeShowFooter from "./components/MaybeShowFooter";
 
 function App() {
@@ -23,9 +26,11 @@ function App() {
           <Route path="/zoo-shop" element={<ZooShop />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/favorites" element={<Favorites />} />
-          <Route path="/adding" element={<Adding />} />
+          <Route path="/add-name" element={<AddingName />} />
+          <Route path="/add-email" element={<AddingEmail />} />
+          <Route path="/add-photo" element={<AddingPhoto />} />
+          <Route path="/add-password" element={<AddingPassword />} />
         </Routes>
-
         <MaybeShowFooter>
           <Footer />
         </MaybeShowFooter>
