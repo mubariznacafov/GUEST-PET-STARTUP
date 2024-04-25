@@ -2,6 +2,27 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const addEmail = () => {
+  const [email, setEmail] = useState("");
+
+  const handleEmailChange = (value) => {
+    setEmail(value);
+  };
+  
+  const handleSave = () => {
+    const data = {
+      Email:email
+    };
+
+    const url = "http://localhost:5078/api/v1/[controller]/register-user";
+    axios
+      .post(url, data)
+      .then((result) => {
+        alert(result.data);
+      })
+      .catch((error) => {
+        alert(error);
+      });
+  };
   return (
     <div className="addingName">
       <div className="top_informations">
@@ -14,12 +35,12 @@ const addEmail = () => {
         <form action="">
           <div className="inputs">
             <div className="input">
-              <input type="email" id="email" placeholder="Email" />
+              <input type="email" id="email" placeholder="Email" onChange={(e) => handleEmailChange(e.target.value)} />
             </div>
           </div>
           <div className="btn">
             <Link to="/add-password">
-              <button>Continue</button>
+              <button onClick={() => handleSave()}>Continue</button>
             </Link>
           </div>
         </form>
