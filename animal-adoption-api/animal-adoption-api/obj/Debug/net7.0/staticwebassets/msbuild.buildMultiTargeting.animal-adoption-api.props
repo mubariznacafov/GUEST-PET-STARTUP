@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\animal-adoption-api.props" />
+</Project>

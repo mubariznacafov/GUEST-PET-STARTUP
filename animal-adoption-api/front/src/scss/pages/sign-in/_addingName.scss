@@ -1,0 +1,62 @@
+@use "../../utils/variables" as *;
+.addingName {
+  text-align: center;
+  font-family: $fourth_font_family;
+  margin: 100px 0;
+  .top_informations {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    h1 {
+      font-size: 60px;
+      margin-bottom: 10px;
+      color: #623ab1;
+      font-weight: 700px;
+    }
+    p {
+      width: 902px;
+      font-weight: 500;
+      font-size: 15px;
+    }
+  }
+  .form {
+    margin-top: 50px;
+    .inputs {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      .input {
+        input {
+          padding: 24px 328px 24px 20px;
+          border-radius: 5px;
+          border: 1.5px solid #3d3d3d;
+          background: #e3d0f8;
+          outline: none;
+
+          caret-color: white;
+        }
+        input::placeholder {
+          color: #3d3d3de5;
+          font-weight: 500;
+          font-size: 20px;
+        }
+      }
+    }
+    .btn {
+      button {
+        font-size: 15px;
+        font-weight: 600;
+        margin-top: 40px;
+        background: #5f249f;
+        color: $secondary_color;
+        padding: 12px 30px;
+        border-radius: 20px;
+        border: 1px solid;
+        cursor: pointer;
+      }
+    }
+  }
+}

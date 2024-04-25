@@ -1,0 +1,97 @@
+@use "../../utils/variables" as *;
+.profile {
+  font-family: $second_font_family;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 600px;
+  margin: 100px 0cd;
+  .leftSide {
+    width: 638px;
+    height: 100%;
+    background: #0d2450;
+    position: relative;
+    .img {
+      width: 400px;
+      height: 420px;
+      position: absolute;
+      top: 180px;
+      left: 100px;
+      img {
+        width: 100%;
+      }
+    }
+    .logo {
+      width: 100px;
+      margin: 20px;
+      img {
+        width: 100%;
+      }
+    }
+  }
+  .rightSide {
+    position: relative;
+    width: 802px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    h2 {
+      margin-bottom: 50px;
+    }
+    .signUp {
+      position: absolute;
+      top: 10px;
+      right: 70px;
+      h2 {
+        font-size: 14px;
+      }
+    }
+    form {
+      width: 416px;
+      .inputs {
+        .input {
+          display: flex;
+          flex-direction: column;
+          margin: 20px 0;
+          input {
+            margin: 8px 0;
+            padding: 10px 15px;
+            outline: none;
+            background-color: #f3f3f4;
+            border: none;
+            border-radius: 5px;
+          }
+          ::placeholder {
+            color: #9e9ea7;
+          }
+        }
+        .checkbox {
+          display: flex;
+          input[type="checkbox"] {
+            margin-right: 10px;
+          }
+          p {
+            font-size: 14px;
+            width: 372px;
+          }
+        }
+        button {
+          background: #ea4c89;
+          border: 1px solid #ea4c89;
+          border-radius: 5px;
+          color: $secondary_color;
+          padding: 10px 40px;
+          margin-top: 30px;
+          cursor: pointer;
+        }
+      }
+      .protect {
+        font-size: 11px;
+        width: 270px;
+        margin-top: 30px;
+        line-height: 20px;
+      }
+    }
+  }
+}
