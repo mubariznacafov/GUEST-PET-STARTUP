@@ -21,7 +21,7 @@ const Navbar = () => {
         <Link to={"/favorites"}>FAVORITES</Link>
       </div>
       <div className="rightLink">
-        <Link to={"/add-name"}>
+        <Link to={"/register"}>
           <FontAwesomeIcon icon={faUser} />
         </Link>
       </div>

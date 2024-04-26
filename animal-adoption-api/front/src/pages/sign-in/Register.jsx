@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import "../../scss/pages/sign-in/_addingName.scss";
 
-const addingName = () => {
+const Register = () => {
   const [nickName, setNickName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -36,7 +36,7 @@ const addingName = () => {
       ConfirmPassword: confirmPassword,
     };
 
-    const url = "https://localhost:44387/api/v1/Auth/register-user";
+    const url = "http://localhost:5078/api/v1/Auth/register-user";
     axios
       .post(url, data)
       .then((result) => {
@@ -114,4 +114,4 @@ const addingName = () => {
   );
 };
 
-export default addingName;
+export default Register;

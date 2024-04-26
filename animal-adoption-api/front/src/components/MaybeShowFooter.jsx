@@ -6,7 +6,7 @@ const MaybeShowFooter = ({ children }) => {
   const [showFooter, setShowFooter] = useState(false);
   useEffect(() => {
     console.log("this is location", location);
-    if (location.pathname === "/adding") {
+    if (location.pathname === "/register") {
       setShowFooter(false);
     } else {
       setShowFooter(true);
