@@ -2,106 +2,38 @@ import { React, useRef, useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import "../../scss/pages/sign-in/_addingName.scss";
-// import {
-//   faCheck,
-//   faTimes,
-//   faInfoCircle,
-// } from "@fortawesome/free-solid-svg-icons";
-// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-// const UserName_REGEX = /^[A-z][A-z0-9-_]{3,23}$/;
-// const UserSurname_REGEX = /^[A-z][A-z0-9-_]{3,23}$/;
-// const REGISTER_URL = "/register";
-
-// const addingName = () => {
-// const userRef = useRef();
-// const errRef = useRef();
-
-// const [userName, setUserName] = useState("");
-// const [validName, setValidName] = useState(false);
-// const [userNameFocus, setUserNameFocus] = useState(false);
-
-// const [userSurname, setUserSurname] = useState("");
-// const [validSurname, setValidSurname] = useState(false);
-// const [userSurnameFocus, setUserSurnameFocus] = useState(false);
-
-// const [errMsg, setErrMsg] = useState("");
-// const [success, setSuccess] = useState(false);
-
-// useEffect(() => {
-//   userRef.current.focus();
-// }, []);
-
-// useEffect(() => {
-//   setValidName(UserName_REGEX.test(userName));
-// }, [userName]);
-
-// useEffect(() => {
-//   setValidSurname(UserSurname_REGEX.test(userSurname));
-// }, [userName]);
-
-// const handleSubmit = async (e) => {
-//   e.preventDefault();
-//   // if button enabled with JS hack
-//   const v1 = USER_REGEX.test(user);
-//   const v2 = PWD_REGEX.test(pwd);
-//   if (!v1 || !v2) {
-//     setErrMsg("Invalid Entry");
-//     return;
-//   }
-//   try {
-//     const response = await axios.post(
-//       REGISTER_URL,
-//       JSON.stringify({ user, pwd }),
-//       {
-//         headers: { "Content-Type": "application/json" },
-//         withCredentials: true,
-//       }
-//     );
-//     console.log(response?.data);
-//     console.log(response?.accessToken);
-//     console.log(JSON.stringify(response));
-//     setSuccess(true);
-//     //clear state and controlled inputs
-//     //need value attrib on inputs for this
-//     setUserName("");
-//     setUserSurname("");
-//   } catch (err) {
-//     if (!err?.response) {
-//       setErrMsg("No Server Response");
-//     } else if (err.response?.status === 409) {
-//       setErrMsg("Username Taken");
-//     } else {
-//       setErrMsg("Registration Failed");
-//     }
-//     errRef.current.focus();
-//   }
-// };
 const addingName = () => {
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
+  const [nickName, setNickName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
+  const [number, setNumber] = useState("");
 
-  const handleFirstNameChange = (value) => {
-    setFirstName(value);
-  };
-  const handleLastNameChange = (value) => {
-    setLastName(value);
+  const handleNickNameChange = (value) => {
+    setNickName(value);
   };
   const handlePasswordChange = (value) => {
     setPassword(value);
   };
+  const handleConfirmPasswordChange = (value) => {
+    setConfirmPassword(value);
+  };
+
   const handleEmailChange = (value) => {
     setEmail(value);
+  };
+  const handleNumberChange = (value) => {
+    setNumber(value);
   };
 
   const handleSave = () => {
     const data = {
-      Name: firstName,
-      Surname: lastName,
+      NickName: nickName,
       Email: email,
       Password: password,
+      PhoneNumber: number,
+      ConfirmPassword: confirmPassword,
     };
 
     const url = "http://localhost:5078/api/v1/[controller]/register-user";
@@ -131,19 +63,12 @@ const addingName = () => {
               <div className="input">
                 <input
                   type="text"
-                  id="username"
-                  placeholder="First Name"
-                  onChange={(e) => handleFirstNameChange(e.target.value)}
+                  id="nickname"
+                  placeholder="Nick Name"
+                  onChange={(e) => handleNickNameChange(e.target.value)}
                 />
               </div>
-              <div className="input">
-                <input
-                  type="text"
-                  id="lastName"
-                  placeholder="Last Name"
-                  onChange={(e) => handleLastNameChange(e.target.value)}
-                />
-              </div>
+
               <div className="input">
                 <input
                   type="email"
@@ -155,9 +80,25 @@ const addingName = () => {
               <div className="input">
                 <input
                   type="password"
-                  id="email"
+                  id="password"
                   placeholder="Password"
                   onChange={(e) => handlePasswordChange(e.target.value)}
+                />
+              </div>
+              <div className="input">
+                <input
+                  type="password"
+                  id="confirm-password"
+                  placeholder="Confirm Password"
+                  onChange={(e) => handleConfirmPasswordChange(e.target.value)}
+                />
+              </div>
+              <div className="input">
+                <input
+                  type="number"
+                  id="number"
+                  placeholder="Number"
+                  onChange={(e) => handleNumberChange(e.target.value)}
                 />
               </div>
             </div>
