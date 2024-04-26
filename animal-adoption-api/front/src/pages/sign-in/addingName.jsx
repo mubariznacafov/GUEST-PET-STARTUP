@@ -36,7 +36,7 @@ const addingName = () => {
       ConfirmPassword: confirmPassword,
     };
 
-    const url = "http://localhost:5078/api/v1/[controller]/register-user";
+    const url = "https://localhost:44387/api/v1/Auth/register-user";
     axios
       .post(url, data)
       .then((result) => {
